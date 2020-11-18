@@ -20,6 +20,14 @@ LAS-CHAIN - Product listing for private trade
 
 LAS-SEND - Transaction service
 
+# Credit/Attribution/Contact
+
+Optional - Attribute to VETO if desired
+
+Conact - libensveto.coms@protonmail.com
+
+
+
 
 
 
