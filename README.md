@@ -14,6 +14,10 @@ Take the site and redistribute as desired.
 
 This site is meant to be one of many different takes/hosts of these fundamental tools for commerce.
 
+Hosting these files: <br>
+Download the zip and open folder <br>
+Either host on your domain or keep it simple `ipfs add /user/folder/.../site  -r`
+
 # Tools
 
 LAS-CHAIN - Product listing for private trade
