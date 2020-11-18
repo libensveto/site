@@ -19,7 +19,7 @@ html {
 
 body {
   margin: 0;
-   background: linear-gradient(-45deg, #ff7575, #6de2eb, #f39b82, #abdbdf, #baebec, #85bebc, #e9916e ); 
+   background: linear-gradient(-45deg, #ff7575, #6de2eb, #f39b82, #abdbdf, #ff7575, #85bebc, #e9916e ); 
    /* background: linear-gradient(-45deg, #afafaf, #d8d8d8, #cccccc, #cecece, #d3d3d3, #757575, #a8a7a7 );  */
 	background-size: 400% 400%;
 	-webkit-animation: gradientBG 10s ease infinite;
