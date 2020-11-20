@@ -29,13 +29,18 @@ LAS-CHAIN - Product listing for private trade
 
 LAS-SEND - Transaction service - coming soon
 
-# Credit/Attribution/Contact
+# Attribution/Contact
 
 Optional - Attribute to VETO if desired
 
 Conact - libensveto.coms@protonmail.com
 
 The unlicense
+
+# Credit
+
+Mark from GUN for his social theories which promted the project and GUN
+Throwness for Readthis.space which laid the groundwork for the project
 
 
 
