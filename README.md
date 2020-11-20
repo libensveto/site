@@ -39,7 +39,7 @@ The unlicense
 
 # Credit
 
-Mark from GUN for his social theories which promted the project and GUN
+Mark from GUN for his social theories which promted the project and GUN <br>
 Throwness for Readthis.space which laid the groundwork for the project
 
 
