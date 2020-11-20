@@ -27,13 +27,15 @@ Either host on your domain or keep it simple `ipfs add /user/folder/.../site  -r
 
 LAS-CHAIN - Product listing for private trade
 
-LAS-SEND - Transaction service
+LAS-SEND - Transaction service - coming soon
 
 # Credit/Attribution/Contact
 
 Optional - Attribute to VETO if desired
 
 Conact - libensveto.coms@protonmail.com
+
+The unlicense
 
 
 
