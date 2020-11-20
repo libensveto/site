@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>//LIBENS ASSEMBLY//VETO</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+      <div class="row" style="font-size:0.7em ;">
+        <a href="index.html"><button style="border: none;">EN</button></a>
+        <a href="indexjp.html"><button style="border: none;">JP</button></a>
+        <a href="#"><button style="border: none;">[IT]</button></a>
+        <a href="indexch.html"><button style="border: none;">CH</button></a>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row">
+
+        <div class="one-half  column" style=" margin-top: 0%;  opacity: 0.3;""> 
+            <a href="chain/chainit.html"><h2>LAS-CHAIN</h2></a>
+            <!-- <a href=""><h2>LAS-SEND</h2></a> -->
+            <br>
+
+            <a href="https://github.com/libensveto/site">
+                <img src="css/github.png" alt="" style="width: 100px; height: 100px;">
+            </a> 
+            <canvas id="qr-code" style="align-content: center  ;"></canvas>
+            <script src="qr.js"></script>
+
+            <script>
+                var qr;
+                (function() {
+                        qr = new QRious({
+                        element: document.getElementById('qr-code'),
+                        size: 100,
+                        foreground: '#000',
+                        background: 'transparent',
+                        value: window.location.href 
+                    });
+                })();
+            </script>
+            <hr>
+        </div>
+        <div class="one-half  column" >
+            <h1  style="font-family: arial; ; margin-top: 20%; font-size: 4em; opacity: 0.2;" >//LIBENS <br> ASSEMBLY <br> //VETO</h1>      
+            <h1  style="font-family: arial; ; font-size: 4em; opacity: 0.2;" > <a href="https://github.com/libensveto/site">>HOST</a> </h1>      
+        </div>
+    </div>
+</div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
