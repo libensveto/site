@@ -60,7 +60,7 @@
     
                         <hr>
                         <h3 id="content"></h3>
-    
+                        <h3 id="price"></h3>
                         <div id="meta" style="display:none; text-transform: uppercase;"> 
                             <hr>
                             <p id="time" style="font-family: Arial, Helvetica, sans-serif;"> <span id="lastUpdated"></span></p>
@@ -149,6 +149,10 @@
                                         text: 'OWNER/CONACT ',
                                         hideOnClick: false
                                     }, spellcheck: false, disableReturn: true,toolbar: false});
+                                    var editorPrice = new MediumEditor('#price', {placeholder: {
+                                        text: 'PRICE',
+                                        hideOnClick: false
+                                    }, spellcheck: false, disableReturn: true,toolbar: false});
                                     var editorContent = new MediumEditor('#content', {
                                         placeholder: {
                                             text: 'PRODUCT',
@@ -162,6 +166,7 @@
                                     });
                                     editorTitle.subscribe('editableInput', debounce(save, 1000));
                                     editorAuthor.subscribe('editableInput', debounce(save, 1000));
+                                    editorPrice.subscribe('editableInput', debounce(save, 1000));
                                     editorContent.subscribe('editableInput', debounce(save, 1000));
         
                                     document.getElementById('publishButton').style.cssText = "";
@@ -196,6 +201,7 @@
                                     
                                     var editorTitle = new MediumEditor('#title', {placeholder: false, spellcheck: false, disableReturn: true,toolbar: false});
                                     var editorAuthor = new MediumEditor('#author', {placeholder: false, spellcheck: false, disableReturn: true,toolbar: false});
+                                    var editorPrice = new MediumEditor('#price', {placeholder: false, spellcheck: false, disableReturn: true,toolbar: false});
                                     var editorContent = new MediumEditor('#content', {
                                         placeholder: false, 
                                         spellcheck: true, 
@@ -206,6 +212,7 @@
                                     });
                                     editorTitle.subscribe('editableInput', debounce(save, 1000));
                                     editorAuthor.subscribe('editableInput', debounce(save, 1000));
+                                    editorPrice.subscribe('editableInput', debounce(save, 1000));
                                     editorContent.subscribe('editableInput', debounce(save, 1000));
         
                                     document.getElementById('meta').style.display = "";
@@ -244,21 +251,68 @@
                             }
                             go();
                     </script>
+                     <script type="text/javascript">
+                        window.addEventListener('load', async () => {
+                          if (window.ethereum) {
+                            window.web3 = new Web3(ethereum);
+                            try {
+                              await ethereum.enable();
+                              initPayButton()
+                            } catch (err) {
+                              $('#status').html('User denied account access', err)
+                            }
+                          } else if (window.web3) {
+                            window.web3 = new Web3(web3.currentProvider)
+                            initPayButton()
+                          } else {
+                            $('#status').html('No Metamask (or other Web3 Provider) installed')
+                          }
+                        })
+                    
+                        const initPayButton = () => {
+                          $('.pay-button').click(() => {
+                            // paymentAddress is where funds will be send to
+                            const paymentAddress = '0x192c96bfee59158441f26101b2db1af3b07feb40'
+                            // code beneath not safe - dont push to production
+                            const amountEth = document.getElementById("price").innerHTML
+
+                    
+                    
+                            web3.eth.sendTransaction({
+                              to: paymentAddress,
+                              value: web3.toWei(amountEth, 'ether')
+                            }, (err, transactionId) => {
+                              if  (err) {
+                                console.log('Payment failed', err)
+                                $('#status').html('Payment failed')
+                              } else {
+                                console.log('Payment successful', transactionId)
+                                $('#status').html('Payment successful')
+                              }
+                            })
+                          })
+                        }
+                      </script>
         
-       
+                <h3><button class="pay-button">PAY</button></h3>
+                <h3><div id="status"></div></h3>
 
                 <h3><button id="publishButton" onclick="publish()" style="display:none;" > CREATE LINK</button></h3>
     
                 <h3><button id="deleteButton" onclick="deleteArticle(this)" style="float:right; margin-top: -10px;">DELETE</button></h3>
     
-                <h3><button id="copyButton" onclick="copyLink(this)" style="display:none">COPY LINK </button></h3> <hr>
+                <h3><button id="copyButton" onclick="copyLink(this)" style="display:none">COPY LINK </button></h3>
+
 
         </div>
         <div class="one-half  column" >
             <a href="../index.html">
                 <h1  style="font-family: arial; ; margin-top: 0%; font-size: 4em; opacity: 0.3;" >//LIBENS <br> ASSEMBLY <br> //VETO</h1>
             </a>
-            <canvas id="qr-code" style="align-self: center  ;"></canvas>
+            <a href="https://github.com/libensveto/site">
+                <img src="../css/github.png" alt="" style="width: 100px; height: 100px;">
+            </a> 
+            <canvas id="qr-code" style="align-content: center  ;"></canvas>
             <script src="qr.js"></script>
 
             <script>
@@ -266,7 +320,7 @@
                 (function() {
                         qr = new QRious({
                         element: document.getElementById('qr-code'),
-                        size: 200,
+                        size: 100,
                         foreground: '#000',
                         background: 'transparent',
                         value: window.location.href 
