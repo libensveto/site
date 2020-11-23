@@ -1,6 +1,8 @@
 # HOMEPAGE OF LIBENS ASSEMBLY
 
-![LA](https://user-images.githubusercontent.com/74682732/99741971-51c51c00-2b37-11eb-9f51-8bc57bed1d72.png) ![LACHAIN](https://user-images.githubusercontent.com/74682732/99742255-fe070280-2b37-11eb-9980-27eda21d333b.png)
+![LA](https://user-images.githubusercontent.com/74682732/99741971-51c51c00-2b37-11eb-9f51-8bc57bed1d72.png) ![LACHAIN](https://user-images.githubusercontent.com/74682732/99742255-fe070280-2b37-11eb-9980-27eda21d333b.png) <br>
+![meta](https://user-images.githubusercontent.com/74682732/100016107-ce107580-2e3d-11eb-9369-baa93c3cfc8c.png)
+
 
 Private commerce tools built on distributed tech using GUN
 
